@@ -1,0 +1,961 @@
+:host {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.pagina-lectura {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 25px 28px 40px;
+
+  color: #262626;
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  transition: 0.2s;
+}
+
+
+/* CABECERA */
+
+.cabecera {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-bottom: 32px;
+}
+
+.cabecera h1 {
+  margin: 0;
+  font-size: 26px;
+  color: #3d2a85;
+}
+
+.cabecera p {
+  margin: 5px 0 0;
+  color: #777;
+}
+
+.volver {
+  min-width: 45px;
+  height: 45px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #eee9ff;
+  color: #5135b5;
+
+  font-size: 25px;
+  cursor: pointer;
+}
+
+
+/* SECCIONES */
+
+.seccion {
+  margin-bottom: 32px;
+}
+
+.seccion h2 {
+  margin: 0 0 15px;
+  font-size: 18px;
+}
+
+
+/* FORMAS DE INGRESAR TEXTO */
+
+.opciones-entrada {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+}
+
+.opcion {
+  min-height: 120px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 15px;
+
+  border: 1px solid #e3deef;
+  border-radius: 16px;
+
+  background: white;
+
+  cursor: pointer;
+}
+
+.opcion:hover,
+.opcion.seleccionada {
+  border-color: #6c4bd3;
+  background: #f7f4ff;
+}
+
+.opcion span {
+  font-size: 28px;
+}
+
+.opcion strong {
+  font-size: 14px;
+}
+
+.opcion small {
+  color: #777;
+}
+
+
+/* TEXTAREA */
+
+.titulo-texto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titulo-texto h2 {
+  margin-bottom: 10px;
+}
+
+.limpiar {
+  border: none;
+  background: transparent;
+
+  color: #5b3cc4;
+
+  font-weight: bold;
+  cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+  min-height: 230px;
+
+  padding: 18px;
+
+  border: 2px solid #ded8ec;
+  border-radius: 16px;
+
+  resize: vertical;
+
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+
+  box-sizing: border-box;
+
+  outline: none;
+}
+
+textarea:focus {
+  border-color: #6c4bd3;
+}
+
+.contador {
+  margin-top: 7px;
+
+  text-align: right;
+
+  color: #777;
+  font-size: 12px;
+}
+
+
+/* ADAPTACIÓN */
+
+.herramientas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 15px;
+}
+
+.control-tamano {
+  padding: 18px;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.botones-tamano {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.botones-tamano button {
+  width: 45px;
+  height: 40px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #eee9ff;
+  color: #4e32ad;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.boton-contraste {
+  padding: 18px;
+
+  border: 1px solid #ded8ec;
+  border-radius: 15px;
+
+  background: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.boton-contraste.activado {
+  background: #161616;
+  color: #ffff00;
+
+  border-color: #ffff00;
+}
+
+
+/* VOZ */
+
+.controles-voz {
+  display: flex;
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+.controles-voz button {
+  min-height: 48px;
+
+  padding: 0 20px;
+
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.escuchar {
+  border: none;
+
+  background: #6241c7;
+  color: white;
+}
+
+.secundario {
+  border: 1px solid #d6d0e7;
+
+  background: white;
+  color: #3f3269;
+}
+
+.secundario:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+
+/* ESTADO */
+
+.estado-lectura {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 15px;
+
+  color: #5135b5;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.indicador {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #6c4bd3;
+}
+
+
+/* ALTO CONTRASTE */
+
+.pagina-lectura.alto-contraste {
+  background: #000000;
+  color: #ffffff;
+}
+
+.alto-contraste .cabecera h1,
+.alto-contraste h2 {
+  color: #ffff00;
+}
+
+.alto-contraste .cabecera p,
+.alto-contraste .contador {
+  color: #ffffff;
+}
+
+.alto-contraste textarea {
+  background: #000000;
+  color: #ffffff;
+
+  border-color: #ffff00;
+}
+
+.alto-contraste textarea::placeholder {
+  color: #dddddd;
+}
+
+.alto-contraste .opcion,
+.alto-contraste .control-tamano,
+.alto-contraste .secundario {
+  background: #000000;
+  color: #ffffff;
+
+  border-color: #ffff00;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+
+  .pagina-lectura {
+    padding: 20px 16px 30px;
+  }
+
+  .cabecera h1 {
+    font-size: 21px;
+  }
+
+  .cabecera p {
+    font-size: 13px;
+  }
+
+  .opciones-entrada {
+    grid-template-columns: 1fr;
+  }
+
+  .opcion {
+    min-height: 85px;
+
+    flex-direction: row;
+    justify-content: flex-start;
+
+    text-align: left;
+  }
+
+  .opcion span {
+    font-size: 25px;
+  }
+
+  .opcion small {
+    margin-left: auto;
+  }
+
+  .herramientas {
+    grid-template-columns: 1fr;
+  }
+
+  .control-tamano {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .controles-voz {
+    flex-direction: column;
+  }
+
+  .controles-voz button {
+    width: 100%;
+  }
+}
+/* =========================================
+   OCR
+========================================= */
+
+.seccion-ocr {
+  margin-top: 20px;
+}
+
+
+/* IMAGEN */
+
+.imagen-ocr {
+  margin-bottom: 18px;
+}
+
+.imagen-ocr h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+
+  font-size: 17px;
+}
+
+.imagen-ocr img {
+  display: block;
+
+  width: 100%;
+  max-width: 600px;
+  max-height: 300px;
+
+  margin: 0 auto;
+
+  object-fit: contain;
+
+  border: 1px solid #ddd5f4;
+  border-radius: 12px;
+
+  background: #f8f6ff;
+}
+
+
+/* PROCESANDO */
+
+.estado-ocr {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 16px;
+
+  background: #f7f4ff;
+
+  border: 1px solid #d9cff5;
+  border-radius: 12px;
+}
+
+.estado-ocr strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #5135b5;
+}
+
+.estado-ocr p {
+  margin: 0;
+
+  color: #6d657e;
+
+  font-size: 14px;
+}
+
+
+/* CÍRCULO DE CARGA */
+
+.cargando-ocr {
+  width: 25px;
+  height: 25px;
+
+  flex-shrink: 0;
+
+  border: 3px solid #e4def5;
+  border-top-color: #6241c7;
+
+  border-radius: 50%;
+
+  animation: girar-ocr 0.8s linear infinite;
+}
+
+@keyframes girar-ocr {
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* OCR CORRECTO */
+
+.mensaje-ocr {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px;
+
+  background: #edf8ef;
+
+  color: #236b35;
+
+  border: 1px solid #c8e7cf;
+  border-radius: 12px;
+}
+
+.mensaje-ocr > span {
+  font-size: 22px;
+}
+
+.mensaje-ocr strong {
+  display: block;
+
+  margin-bottom: 3px;
+}
+
+.mensaje-ocr p {
+  margin: 0;
+
+  font-size: 14px;
+}
+
+
+/* ERROR OCR */
+
+.error-ocr {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px;
+
+  background: #fff0ef;
+
+  color: #9c2923;
+
+  border: 1px solid #f1cbc8;
+  border-radius: 12px;
+}
+
+.error-ocr > span {
+  font-size: 22px;
+}
+
+.error-ocr strong {
+  display: block;
+
+  margin-bottom: 3px;
+}
+
+.error-ocr p {
+  margin: 0;
+
+  font-size: 14px;
+}
+
+
+/* BOTONES DESACTIVADOS */
+
+.opcion:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   OCR + ALTO CONTRASTE
+========================================= */
+
+.pagina-lectura.alto-contraste .imagen-ocr img {
+  background: #000;
+  border-color: #ffff00;
+}
+
+.pagina-lectura.alto-contraste .estado-ocr,
+.pagina-lectura.alto-contraste .mensaje-ocr,
+.pagina-lectura.alto-contraste .error-ocr {
+  background: #000;
+
+  color: #fff;
+
+  border-color: #ffff00;
+}
+
+.pagina-lectura.alto-contraste .estado-ocr strong,
+.pagina-lectura.alto-contraste .mensaje-ocr strong,
+.pagina-lectura.alto-contraste .error-ocr strong {
+  color: #ffff00;
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 700px) {
+
+  .imagen-ocr img {
+    max-height: 240px;
+  }
+
+}
+
+.acciones-documento {
+  margin-top: 15px;
+}
+
+
+.guardar-documento {
+  padding: 12px 18px;
+
+  background: #6241c7;
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+
+  font-weight: 600;
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.guardar-documento:hover:not(:disabled) {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 4px 12px rgba(98, 65, 199, 0.25);
+}
+
+
+.guardar-documento:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+.mensaje-guardado {
+  margin-top: 10px;
+
+  padding: 10px 12px;
+
+  background: #edf8ef;
+  color: #236b35;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+}
+
+
+
+.pagina-lectura.alto-contraste
+.guardar-documento {
+  background: #ffff00;
+  color: #000;
+}
+
+
+.pagina-lectura.alto-contraste
+.mensaje-guardado {
+  background: #000;
+  color: #ffff00;
+
+  border: 1px solid #ffff00;
+}
+
+/* =========================================
+   ICONOS MINIMALISTAS
+========================================= */
+
+.icono-boton {
+  width: 21px;
+  height: 21px;
+
+  flex-shrink: 0;
+
+  display: block;
+}
+
+
+/* Botones que contienen icono + texto */
+
+button:has(.icono-boton),
+a:has(.icono-boton) {
+  align-items: center;
+  gap: 8px;
+}
+
+
+/* Guardar */
+
+.guardar-documento {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+
+/* SVG hereda el color del botón */
+
+.icono-boton {
+  color: inherit;
+}
+
+.icono-opcion {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: #f1edff;
+  color: #6241c7;
+
+  border-radius: 11px;
+}
+
+
+.icono-opcion svg {
+  width: 23px;
+  height: 23px;
+
+  display: block;
+}
+
+/* =========================================
+   ICONOS MINIMALISTAS - LECTURA
+========================================= */
+
+
+/* ICONOS DE LAS TRES OPCIONES PRINCIPALES */
+
+.icono-opcion {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: #f1edff;
+  color: #6241c7;
+
+  border-radius: 11px;
+}
+
+
+.icono-opcion svg {
+  width: 23px;
+  height: 23px;
+
+  display: block;
+}
+
+
+/* ICONOS DE BOTONES */
+
+.icono-control {
+  width: 22px;
+  height: 22px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+
+.icono-control svg {
+  width: 21px;
+  height: 21px;
+
+  display: block;
+}
+
+
+/* ICONO PEQUEÑO */
+
+.icono-pequeno {
+  width: 17px;
+  height: 17px;
+
+  display: block;
+
+  flex-shrink: 0;
+}
+
+
+/* BOTÓN LIMPIAR */
+
+.limpiar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+}
+
+
+/* GUARDAR */
+
+.guardar-documento {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+
+/* CONTRASTE */
+
+.boton-contraste {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+/* BOTONES DE VOZ */
+
+.controles-voz button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+
+/* BOTÓN VOLVER */
+
+.volver {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.volver svg {
+  width: 22px;
+  height: 22px;
+
+  display: block;
+}
+
+
+/* ESTADOS OCR */
+
+.icono-estado {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+
+.icono-estado svg {
+  width: 25px;
+  height: 25px;
+
+  display: block;
+}
+
+
+.icono-correcto {
+  color: #2f7d4a;
+}
+
+
+.icono-error {
+  color: #b23a3a;
+}
+/* =========================================
+   CONTROLES DE LECTURA POR VOZ
+========================================= */
+
+.controles-voz {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+
+.boton-voz {
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 10px 16px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #6241c7;
+  color: #ffffff;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.boton-voz:hover:not(:disabled) {
+  background: #5134ae;
+}
+
+
+.boton-voz:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+
+.boton-voz:disabled {
+  background: #d4d0dd;
+  color: #817b89;
+
+  cursor: not-allowed;
+
+  opacity: 1;
+}
+
+
+.boton-voz svg {
+  width: 20px;
+  height: 20px;
+
+  display: block;
+}

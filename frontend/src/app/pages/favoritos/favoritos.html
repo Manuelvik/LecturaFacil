@@ -1,0 +1,441 @@
+<div class="pagina-favoritos">
+
+
+  <!-- =====================================
+       CABECERA
+  ====================================== -->
+
+  <header class="cabecera">
+
+    <div>
+
+      <h1>
+        Favoritos
+      </h1>
+
+      <p>
+        Accede rápidamente a tus contenidos preferidos
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================
+       CANTIDAD
+  ====================================== -->
+
+  @if (favoritos().length > 0) {
+
+  <div class="resumen">
+
+    {{ favoritos().length }}
+
+    {{
+    favoritos().length === 1
+    ? 'favorito guardado'
+    : 'favoritos guardados'
+    }}
+
+  </div>
+
+  }
+
+
+  <!-- =====================================
+       SIN FAVORITOS
+  ====================================== -->
+
+  @if (favoritos().length === 0) {
+
+  <section class="vacio">
+
+    <div class="icono-vacio">
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linejoin="round"
+        aria-hidden="true">
+
+        <path
+          d="M12 3.8l2.5 5.1 5.6.8-4 3.9.9 5.5-5-2.6-5 2.6.9-5.5-4-3.9 5.6-.8z">
+        </path>
+
+      </svg>
+
+    </div>
+
+
+    <h2>
+      Todavía no tienes favoritos
+    </h2>
+
+
+    <p>
+      Marca con una estrella los documentos
+      que quieras encontrar rápidamente.
+    </p>
+
+
+    <button
+      type="button"
+      class="ver-archivos"
+      routerLink="/archivos">
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true">
+
+        <path
+          d="M3 6.5a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z">
+        </path>
+
+      </svg>
+
+      <span>
+          Ver mis archivos
+        </span>
+
+    </button>
+
+  </section>
+
+  }
+
+
+  <!-- =====================================
+       LISTA DE FAVORITOS
+  ====================================== -->
+
+  @else {
+
+  <section class="lista-favoritos">
+
+
+    @for (
+    documento of favoritos();
+    track documento.id
+    ) {
+
+    <article class="tarjeta-favorito">
+
+
+      <!-- PARTE SUPERIOR -->
+
+      <div class="favorito-superior">
+
+
+        <!-- DOCUMENTO -->
+
+        <div class="icono-documento">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true">
+
+            <path d="M6 2h8l4 4v16H6z"></path>
+
+            <path d="M14 2v5h5"></path>
+
+            <path d="M9 12h6"></path>
+
+            <path d="M9 16h6"></path>
+
+          </svg>
+
+        </div>
+
+
+        <!-- INFORMACIÓN -->
+
+        <div class="informacion">
+
+          <h2>
+            {{ documento.titulo }}
+          </h2>
+
+
+          <p class="fecha">
+
+            {{
+            documento.fecha
+            | date:'dd/MM/yyyy - HH:mm'
+            }}
+
+          </p>
+
+        </div>
+
+
+        <!-- ESTRELLA -->
+
+        <button
+          type="button"
+          class="estrella"
+          (click)="quitarFavorito(documento.id)"
+          aria-label="Quitar de favoritos"
+          title="Quitar de favoritos">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+            aria-hidden="true">
+
+            <path
+              d="M12 3.8l2.5 5.1 5.6.8-4 3.9.9 5.5-5-2.6-5 2.6.9-5.5-4-3.9 5.6-.8z">
+            </path>
+
+          </svg>
+
+        </button>
+
+
+      </div>
+
+
+      <!-- VISTA PREVIA -->
+
+      <p class="vista-previa">
+
+        {{
+        documento.contenido.length > 130
+        ? (
+        documento.contenido
+        .substring(0, 130)
+        + '...'
+        )
+        : documento.contenido
+        }}
+
+      </p>
+
+
+      <!-- CONTENIDO COMPLETO -->
+
+      @if (
+      documentoAbiertoId ===
+      documento.id
+      ) {
+
+      <div class="contenido-completo">
+
+        <strong>
+          Contenido
+        </strong>
+
+
+        <p>
+          {{ documento.contenido }}
+        </p>
+
+      </div>
+
+      }
+
+
+      <!-- =====================================
+           ACCIONES
+      ====================================== -->
+
+      <div class="acciones">
+
+
+        <!-- VER / OCULTAR -->
+
+        <button
+          type="button"
+          class="accion"
+          (click)="cambiarVista(documento.id)">
+
+
+          @if (
+          documentoAbiertoId ===
+          documento.id
+          ) {
+
+          <svg
+            class="icono-accion"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true">
+
+            <path
+              d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z">
+            </path>
+
+            <circle
+              cx="12"
+              cy="12"
+              r="2.5">
+            </circle>
+
+            <path d="M4 4l16 16"></path>
+
+          </svg>
+
+          <span>
+                  Ocultar
+                </span>
+
+          } @else {
+
+          <svg
+            class="icono-accion"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true">
+
+            <path
+              d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z">
+            </path>
+
+            <circle
+              cx="12"
+              cy="12"
+              r="2.5">
+            </circle>
+
+          </svg>
+
+          <span>
+                  Ver
+                </span>
+
+          }
+
+        </button>
+
+
+        <!-- ESCUCHAR / DETENER -->
+
+        <button
+          type="button"
+          class="accion escuchar"
+          (click)="escuchar(documento)">
+
+
+          @if (
+          documentoLeyendoId ===
+          documento.id
+          ) {
+
+          <svg
+            class="icono-accion"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linejoin="round"
+            aria-hidden="true">
+
+            <rect
+              x="6"
+              y="6"
+              width="12"
+              height="12"
+              rx="1">
+            </rect>
+
+          </svg>
+
+          <span>
+                  Detener
+                </span>
+
+          } @else {
+
+          <svg
+            class="icono-accion"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true">
+
+            <path d="M11 5L6 9H3v6h3l5 4z"></path>
+
+            <path d="M15 9a4 4 0 0 1 0 6"></path>
+
+            <path d="M17.5 6.5a8 8 0 0 1 0 11"></path>
+
+          </svg>
+
+          <span>
+                  Escuchar
+                </span>
+
+          }
+
+        </button>
+
+
+        <!-- QUITAR FAVORITO -->
+
+        <button
+          type="button"
+          class="accion quitar"
+          (click)="quitarFavorito(documento.id)">
+
+          <svg
+            class="icono-accion"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linejoin="round"
+            aria-hidden="true">
+
+            <path
+              d="M12 3.8l2.5 5.1 5.6.8-4 3.9.9 5.5-5-2.6-5 2.6.9-5.5-4-3.9 5.6-.8z">
+            </path>
+
+          </svg>
+
+          <span>
+                Quitar favorito
+              </span>
+
+        </button>
+
+
+      </div>
+
+
+    </article>
+
+    }
+
+
+  </section>
+
+  }
+
+
+</div>

@@ -1,0 +1,582 @@
+<div class="configuracion">
+
+
+  <!-- =====================================
+       CABECERA
+  ====================================== -->
+
+  <header class="cabecera">
+
+    <button
+      type="button"
+      routerLink="/inicio"
+      class="volver"
+      aria-label="Volver al inicio">
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true">
+
+        <path d="M19 12H5"></path>
+        <path d="M11 18l-6-6 6-6"></path>
+
+      </svg>
+
+    </button>
+
+
+    <div>
+
+      <h1>
+        Configuración de accesibilidad
+      </h1>
+
+      <p>
+        Personaliza LecturaFácil según tus necesidades
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================
+       ACCESIBILIDAD VISUAL
+  ====================================== -->
+
+  <section class="grupo">
+
+    <div class="titulo-grupo">
+
+      <span class="icono">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true">
+
+          <path
+            d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z">
+          </path>
+
+          <circle
+            cx="12"
+            cy="12"
+            r="2.5">
+          </circle>
+
+        </svg>
+
+      </span>
+
+
+      <div>
+
+        <h2>
+          Accesibilidad visual
+        </h2>
+
+        <p>
+          Adapta la visualización de la aplicación.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- TAMAÑO -->
+
+    <div class="ajuste ajuste-vertical">
+
+      <div class="informacion">
+
+        <strong>
+          Tamaño de interfaz
+        </strong>
+
+        <span>
+          Aumenta textos, botones y elementos.
+        </span>
+
+      </div>
+
+
+      <div class="control-tamano">
+
+        <span class="etiqueta-rango">
+          A−
+        </span>
+
+
+        <input
+          type="range"
+          min="90"
+          max="125"
+          step="5"
+          [value]="accesibilidad.tamano()"
+          (input)="cambiarTamano($event)"
+          aria-label="Tamaño de la interfaz"
+        />
+
+
+        <span class="etiqueta-rango">
+          A+
+        </span>
+
+
+        <strong>
+          {{ accesibilidad.tamano() }}%
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <!-- ALTO CONTRASTE -->
+
+    <div class="ajuste">
+
+      <div class="informacion">
+
+        <strong>
+          Alto contraste
+        </strong>
+
+        <span>
+          Mejora la diferenciación entre texto y fondo.
+        </span>
+
+      </div>
+
+
+      <label class="switch">
+
+        <input
+          type="checkbox"
+          [checked]="accesibilidad.altoContraste()"
+          (change)="cambiarContraste($event)"
+          aria-label="Activar o desactivar alto contraste"
+        />
+
+        <span class="slider"></span>
+
+      </label>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       ACCESIBILIDAD AUDITIVA
+  ====================================== -->
+
+  <section class="grupo">
+
+    <div class="titulo-grupo">
+
+      <span class="icono">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true">
+
+          <rect
+            x="3"
+            y="5"
+            width="18"
+            height="14"
+            rx="3">
+          </rect>
+
+          <path d="M7 11h4"></path>
+          <path d="M7 15h3"></path>
+
+          <path d="M13 11h4"></path>
+          <path d="M12 15h5"></path>
+
+        </svg>
+
+      </span>
+
+
+      <div>
+
+        <h2>
+          Accesibilidad auditiva
+        </h2>
+
+        <p>
+          Opciones de apoyo para contenido auditivo.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="ajuste">
+
+      <div class="informacion">
+
+        <strong>
+          Subtítulos automáticos
+        </strong>
+
+        <span>
+          Mostrar texto cuando exista contenido multimedia compatible.
+        </span>
+
+      </div>
+
+
+      <label class="switch">
+
+        <input
+          type="checkbox"
+          [checked]="accesibilidad.subtitulos()"
+          (change)="cambiarSubtitulos($event)"
+          aria-label="Activar o desactivar subtítulos automáticos"
+        />
+
+        <span class="slider"></span>
+
+      </label>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       ACCESIBILIDAD MOTORA
+  ====================================== -->
+
+  <section class="grupo">
+
+    <div class="titulo-grupo">
+
+      <span class="icono">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true">
+
+          <rect
+            x="9"
+            y="2"
+            width="6"
+            height="12"
+            rx="3">
+          </rect>
+
+          <path d="M5 10a7 7 0 0 0 14 0"></path>
+
+          <path d="M12 17v4"></path>
+
+          <path d="M8 21h8"></path>
+
+        </svg>
+
+      </span>
+
+
+      <div>
+
+        <h2>
+          Accesibilidad motora
+        </h2>
+
+        <p>
+          Reduce la necesidad de interacción táctil.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="ajuste">
+
+      <div class="informacion">
+
+        <strong>
+          Navegación mediante voz
+        </strong>
+
+        <span>
+          Permite utilizar comandos para desplazarse por la aplicación.
+        </span>
+
+      </div>
+
+
+      <label class="switch">
+
+        <input
+          type="checkbox"
+          [checked]="accesibilidad.navegacionVoz()"
+          (change)="cambiarNavegacionVoz($event)"
+          aria-label="Activar o desactivar navegación mediante voz"
+        />
+
+        <span class="slider"></span>
+
+      </label>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       ACCESIBILIDAD COGNITIVA
+  ====================================== -->
+
+  <section class="grupo">
+
+    <div class="titulo-grupo">
+
+      <span class="icono">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true">
+
+          <rect
+            x="4"
+            y="4"
+            width="6"
+            height="6"
+            rx="1">
+          </rect>
+
+          <rect
+            x="14"
+            y="4"
+            width="6"
+            height="6"
+            rx="1">
+          </rect>
+
+          <rect
+            x="4"
+            y="14"
+            width="6"
+            height="6"
+            rx="1">
+          </rect>
+
+          <rect
+            x="14"
+            y="14"
+            width="6"
+            height="6"
+            rx="1">
+          </rect>
+
+        </svg>
+
+      </span>
+
+
+      <div>
+
+        <h2>
+          Accesibilidad cognitiva
+        </h2>
+
+        <p>
+          Simplifica la presentación de información.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="ajuste">
+
+      <div class="informacion">
+
+        <strong>
+          Modo simplificado
+        </strong>
+
+        <span>
+          Reduce elementos secundarios y facilita la navegación.
+        </span>
+
+      </div>
+
+
+      <label class="switch">
+
+        <input
+          type="checkbox"
+          [checked]="accesibilidad.modoSimplificado()"
+          (change)="cambiarModoSimplificado($event)"
+          aria-label="Activar o desactivar modo simplificado"
+        />
+
+        <span class="slider"></span>
+
+      </label>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       LECTURA POR VOZ
+  ====================================== -->
+
+  <section class="grupo">
+
+    <div class="titulo-grupo">
+
+      <span class="icono">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true">
+
+          <path d="M11 5L6 9H3v6h3l5 4z"></path>
+
+          <path d="M15 9a4 4 0 0 1 0 6"></path>
+
+          <path d="M17.5 6.5a8 8 0 0 1 0 11"></path>
+
+        </svg>
+
+      </span>
+
+
+      <div>
+
+        <h2>
+          Lectura por voz
+        </h2>
+
+        <p>
+          Configura la velocidad de reproducción.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="ajuste ajuste-vertical">
+
+      <div class="informacion">
+
+        <strong>
+          Velocidad de lectura
+        </strong>
+
+        <span>
+          Ajusta la velocidad de la voz.
+        </span>
+
+      </div>
+
+
+      <div class="control-velocidad">
+
+        <span class="etiqueta-rango">
+          Lenta
+        </span>
+
+
+        <input
+          type="range"
+          min="0.5"
+          max="1.5"
+          step="0.1"
+          [value]="accesibilidad.velocidadVoz()"
+          (input)="cambiarVelocidad($event)"
+          aria-label="Velocidad de lectura por voz"
+        />
+
+
+        <span class="etiqueta-rango">
+          Rápida
+        </span>
+
+
+        <strong>
+          {{ accesibilidad.velocidadVoz().toFixed(1) }}x
+        </strong>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       RESTAURAR
+  ====================================== -->
+
+  <button
+    type="button"
+    class="restaurar"
+    (click)="restaurar()">
+
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true">
+
+      <path d="M3 12a9 9 0 1 0 3-6.7"></path>
+
+      <path d="M3 4v6h6"></path>
+
+    </svg>
+
+    <span>
+      Restaurar configuración predeterminada
+    </span>
+
+  </button>
+
+
+</div>

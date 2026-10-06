@@ -1,0 +1,606 @@
+:host {
+  display: block;
+}
+.logo-principal {
+  width: 100px;
+  height: 100px;
+
+  min-width: 82px;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+}
+
+.logo-principal img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+.inicio {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 28px 40px;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+.encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #6c4bd3;
+  color: white;
+
+  border-radius: 14px;
+
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.marca h1 {
+  margin: 0;
+  font-size: 22px;
+  color: #4f35a8;
+}
+
+.marca p {
+  margin: 3px 0 0;
+  font-size: 13px;
+  color: #777;
+}
+
+.boton-perfil {
+  width: 44px;
+  height: 44px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f0ebff;
+
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+/* =========================
+   BIENVENIDA
+========================= */
+
+.bienvenida {
+  margin-bottom: 32px;
+}
+
+.saludo {
+  color: #6c4bd3;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.bienvenida h2 {
+  font-size: 30px;
+  margin: 0 0 8px;
+}
+
+.bienvenida > p:last-child {
+  margin: 0;
+  color: #6d6d6d;
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+.seccion {
+  margin-bottom: 32px;
+}
+
+.seccion h3 {
+  font-size: 18px;
+  margin: 0 0 16px;
+}
+
+
+/* =========================
+   ACCIONES
+========================= */
+
+.acciones {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.tarjeta {
+  min-height: 115px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 18px;
+
+  border: 1px solid #e7e2f4;
+  border-radius: 18px;
+
+  background: white;
+
+  text-align: left;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    border-color 0.2s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-2px);
+  border-color: #8065d8;
+  box-shadow: 0 7px 20px rgba(83, 56, 164, 0.12);
+}
+
+.accion-principal {
+  background: #f7f4ff;
+  border-color: #d9cff7;
+}
+
+.icono {
+  min-width: 52px;
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #eee9ff;
+
+  border-radius: 14px;
+
+  font-size: 25px;
+}
+
+.icono.grande {
+  background: #6c4bd3;
+  color: white;
+}
+
+.texto {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  flex: 1;
+}
+
+.texto strong {
+  font-size: 16px;
+  color: #2f2f2f;
+}
+
+.texto span {
+  color: #777;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.flecha {
+  color: #6c4bd3;
+  font-size: 30px;
+}
+
+
+/* =========================
+   ACCESIBILIDAD
+========================= */
+
+.titulo-accesibilidad {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 16px;
+}
+
+.titulo-accesibilidad h3 {
+  margin: 0;
+}
+
+.ver-todo {
+  border: none;
+  background: transparent;
+
+  color: #5b3cc4;
+
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.opciones-accesibilidad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.opcion-accesibilidad {
+  min-height: 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+
+  background: white;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  transition: 0.2s;
+}
+
+.opcion-accesibilidad:hover {
+  border-color: #6c4bd3;
+  background: #f8f6ff;
+}
+
+.icono-accesibilidad {
+  color: #5b3cc4;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+/* =========================
+   AYUDA
+========================= */
+
+.ayuda {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 18px;
+
+  background: #f5f2ff;
+
+  border-radius: 18px;
+}
+
+.ayuda-icono {
+  min-width: 42px;
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #6c4bd3;
+  color: white;
+
+  border-radius: 50%;
+
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.ayuda div:nth-child(2) {
+  flex: 1;
+}
+
+.ayuda strong {
+  color: #35276e;
+}
+
+.ayuda p {
+  margin: 4px 0 0;
+  color: #6e6687;
+  font-size: 13px;
+}
+
+.ayuda button {
+  padding: 10px 15px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #6c4bd3;
+  color: white;
+
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 700px) {
+
+  .inicio {
+    padding: 20px 16px 30px;
+  }
+
+  .marca p {
+    display: none;
+  }
+
+  .bienvenida {
+    margin-top: 10px;
+  }
+
+  .bienvenida h2 {
+    font-size: 25px;
+  }
+
+  .acciones {
+    grid-template-columns: 1fr;
+  }
+
+  .tarjeta {
+    min-height: 90px;
+  }
+
+  .opciones-accesibilidad {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .opcion-accesibilidad {
+    min-height: 90px;
+  }
+
+  .ayuda {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .ayuda button {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   ACCESIBILIDAD RÁPIDA
+========================================= */
+
+.opciones-accesibilidad {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 12px;
+}
+
+
+.opcion-accesibilidad {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 14px;
+
+  border: 1px solid #ded9e8;
+  border-radius: 12px;
+
+  background: white;
+
+  color: #51495e;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.opcion-accesibilidad:hover {
+  border-color: #9d8bd1;
+
+  background: #faf8ff;
+}
+
+
+.opcion-accesibilidad.activa {
+  border-color: #6241c7;
+
+  background: #f1edff;
+
+  box-shadow:
+    0 0 0 2px rgba(98, 65, 199, 0.08);
+}
+
+
+.icono-accesibilidad {
+  flex-shrink: 0;
+
+  font-size: 23px;
+}
+
+
+.texto-accesibilidad {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.texto-accesibilidad strong {
+  color: #403650;
+
+  font-size: 13px;
+}
+
+
+.texto-accesibilidad small {
+  color: #8a8295;
+
+  font-size: 11px;
+}
+
+
+.opcion-accesibilidad.activa
+.texto-accesibilidad strong {
+  color: #573bb2;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+
+  .opciones-accesibilidad {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 380px) {
+
+  .opciones-accesibilidad {
+    grid-template-columns: 1fr;
+  }
+
+}
+/* =========================================
+   ICONOS MINIMALISTAS
+========================================= */
+
+.icono-minimalista {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  background: #f1edff;
+
+  color: #6241c7;
+
+  border-radius: 11px;
+}
+
+
+.icono-minimalista svg {
+  width: 22px;
+  height: 22px;
+
+  display: block;
+}
+
+
+.icono-texto {
+  font-size: 17px;
+  font-weight: 700;
+
+  letter-spacing: -1px;
+}
+
+
+/* BOTÓN DE AJUSTES */
+
+.ver-ajustes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+
+.ver-ajustes svg {
+  width: 19px;
+  height: 19px;
+
+  flex-shrink: 0;
+}
+
+
+/* ESTADO ACTIVO */
+
+.opcion-accesibilidad.activa
+.icono-minimalista {
+  background: #6241c7;
+
+  color: white;
+}
+
+/* Quitar subrayado de los enlaces de Inicio */
+
+.tarjeta,
+.ver-ajustes {
+  text-decoration: none;
+}
+
+.tarjeta:hover,
+.tarjeta:focus,
+.tarjeta:active,
+.ver-ajustes:hover,
+.ver-ajustes:focus,
+.ver-ajustes:active {
+  text-decoration: none;
+}
+.boton-perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boton-perfil svg {
+  width: 22px;
+  height: 22px;
+
+  display: block;
+
+  color: #6241c7;
+}

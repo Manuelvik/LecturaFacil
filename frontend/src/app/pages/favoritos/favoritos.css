@@ -1,0 +1,546 @@
+
+.pagina-favoritos {
+  width: min(900px, calc(100% - 32px));
+
+  margin: 0 auto;
+
+  padding: 28px 0 35px;
+}
+
+
+.cabecera {
+  margin-bottom: 20px;
+}
+
+
+.cabecera h1 {
+  margin: 0;
+
+  color: #30264b;
+
+  font-size: 28px;
+  font-weight: 700;
+}
+
+
+.cabecera p {
+  margin: 6px 0 0;
+
+  color: #777083;
+
+  font-size: 14px;
+}
+
+
+.resumen {
+  margin-bottom: 20px;
+
+  color: #777083;
+
+  font-size: 13px;
+}
+
+
+.lista-favoritos {
+  display: grid;
+
+  gap: 16px;
+}
+
+
+.tarjeta-favorito {
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2ddeb;
+  border-radius: 16px;
+
+  box-shadow:
+    0 3px 12px rgba(45, 32, 80, 0.06);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.tarjeta-favorito:hover {
+  border-color: #d3cae5;
+
+  box-shadow:
+    0 5px 16px rgba(45, 32, 80, 0.08);
+}
+
+
+.favorito-superior {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+}
+
+
+.icono-documento {
+  min-width: 48px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: #fff7d8;
+
+  color: #c18b00;
+
+  border-radius: 12px;
+}
+
+
+.icono-documento svg {
+  width: 24px;
+  height: 24px;
+
+  display: block;
+}
+
+
+/* =========================================
+   INFORMACIÓN
+========================================= */
+
+.informacion {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.informacion h2 {
+  margin: 0;
+
+  color: #30264b;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  overflow-wrap: anywhere;
+}
+
+
+.fecha {
+  margin: 5px 0 0;
+
+  color: #918a9d;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   ESTRELLA
+========================================= */
+
+.estrella {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #fff7d8;
+
+  color: #d49b00;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.estrella svg {
+  width: 22px;
+  height: 22px;
+
+  display: block;
+}
+
+
+.estrella:hover {
+  background: #fff1b8;
+
+  transform: scale(1.05);
+}
+
+
+.estrella:active {
+  transform: scale(0.94);
+}
+
+
+/* =========================================
+   VISTA PREVIA
+========================================= */
+
+.vista-previa {
+  margin: 17px 0;
+
+  color: #625b6c;
+
+  font-size: 14px;
+  line-height: 1.6;
+
+  white-space: pre-line;
+}
+
+
+/* =========================================
+   CONTENIDO COMPLETO
+========================================= */
+
+.contenido-completo {
+  margin-bottom: 17px;
+
+  padding: 16px;
+
+  background: #f8f6fc;
+
+  border: 1px solid #ebe6f3;
+  border-radius: 12px;
+}
+
+
+.contenido-completo strong {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #4e388f;
+
+  font-size: 14px;
+}
+
+
+.contenido-completo p {
+  margin: 0;
+
+  color: #514b5b;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  white-space: pre-wrap;
+}
+
+
+/* =========================================
+   ACCIONES
+========================================= */
+
+.acciones {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding-top: 14px;
+
+  border-top: 1px solid #eeeaf3;
+}
+
+
+.accion {
+  min-height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 9px 13px;
+
+  border: 1px solid #ddd7e8;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #544a67;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.icono-accion {
+  width: 18px;
+  height: 18px;
+
+  display: block;
+
+  flex-shrink: 0;
+}
+
+
+.accion:hover {
+  background: #f5f2fc;
+
+  border-color: #bdb0df;
+}
+
+
+.accion:active {
+  transform: scale(0.98);
+}
+
+
+/* ESCUCHAR */
+
+.accion.escuchar {
+  color: #573bb2;
+}
+
+
+.accion.escuchar:hover {
+  background: #f2effc;
+
+  border-color: #c9bce9;
+}
+
+
+/* QUITAR FAVORITO */
+
+.accion.quitar {
+  margin-left: auto;
+
+  color: #9b7200;
+}
+
+
+.accion.quitar:hover {
+  background: #fff8df;
+
+  border-color: #dfc56d;
+}
+
+
+/* =========================================
+   VACÍO
+========================================= */
+
+.vacio {
+  margin-top: 40px;
+
+  padding: 45px 25px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e4dfec;
+  border-radius: 18px;
+}
+
+
+.icono-vacio {
+  width: 68px;
+  height: 68px;
+
+  margin: 0 auto 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff7d8;
+
+  color: #d49b00;
+
+  border-radius: 18px;
+}
+
+
+.icono-vacio svg {
+  width: 34px;
+  height: 34px;
+
+  display: block;
+}
+
+
+.vacio h2 {
+  margin: 0 0 8px;
+
+  color: #30264b;
+
+  font-size: 20px;
+}
+
+
+.vacio p {
+  max-width: 430px;
+
+  margin: 0 auto 20px;
+
+  color: #777083;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   VER MIS ARCHIVOS
+========================================= */
+
+.ver-archivos {
+  min-height: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 11px 18px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #6241c7;
+
+  color: #ffffff;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.ver-archivos svg {
+  width: 20px;
+  height: 20px;
+
+  display: block;
+}
+
+
+.ver-archivos:hover {
+  background: #5134ae;
+}
+
+
+.ver-archivos:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================================
+   TECLADO / ACCESIBILIDAD
+========================================= */
+
+.estrella:focus-visible,
+.accion:focus-visible,
+.ver-archivos:focus-visible {
+  outline: 2px solid #6241c7;
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+  .pagina-favoritos {
+    width: min(
+      calc(100% - 24px),
+      900px
+    );
+
+    padding-top: 20px;
+  }
+
+
+  .cabecera h1 {
+    font-size: 24px;
+  }
+
+
+  .tarjeta-favorito {
+    padding: 16px;
+  }
+
+
+  .icono-documento {
+    width: 44px;
+    height: 44px;
+
+    min-width: 44px;
+  }
+
+
+  .icono-documento svg {
+    width: 22px;
+    height: 22px;
+  }
+
+
+  .estrella {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .acciones {
+    flex-wrap: wrap;
+  }
+
+
+  .accion {
+    flex: 1;
+
+    min-width: 110px;
+  }
+
+
+  .accion.quitar {
+    margin-left: 0;
+
+    flex-basis: 100%;
+  }
+
+
+  .vacio {
+    padding: 38px 20px;
+  }
+
+}

@@ -1,0 +1,163 @@
+.contenido {
+  min-height: 100vh;
+  padding-bottom: 85px;
+  box-sizing: border-box;
+}
+/* ================================
+   ASISTENTE DE VOZ GLOBAL
+================================ */
+
+.voz-global {
+  position: fixed;
+
+  right: 22px;
+  bottom: 92px;
+
+  z-index: 2000;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.microfono-global {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #6241c7;
+  color: white;
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 18px rgba(70, 45, 150, 0.35);
+
+  transition: 0.2s;
+}
+
+
+.microfono-global:hover {
+  transform: scale(1.06);
+}
+
+
+.microfono-global.activo {
+  background: #c0392b;
+
+  animation: pulso-voz 1.2s infinite;
+}
+
+
+@keyframes pulso-voz {
+
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(192, 57, 43, 0.45);
+  }
+
+  70% {
+    box-shadow:
+      0 0 0 15px rgba(192, 57, 43, 0);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(192, 57, 43, 0);
+  }
+
+}
+
+
+.mensaje-voz {
+  min-width: 150px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 10px 14px;
+
+  background: #ffffff;
+
+  border: 1px solid #ded8ec;
+  border-radius: 12px;
+
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+
+.mensaje-voz strong {
+  color: #5135b5;
+
+  font-size: 14px;
+}
+
+
+.mensaje-voz span {
+  margin-top: 3px;
+
+  color: #777;
+
+  font-size: 12px;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+
+  .voz-global {
+    right: 16px;
+    bottom: 88px;
+  }
+
+  .microfono-global {
+    width: 54px;
+    height: 54px;
+
+    font-size: 22px;
+  }
+
+}
+.microfono-global {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #6241c7;
+  color: white;
+
+  cursor: pointer;
+}
+/* Quitar subrayado de los enlaces de Inicio */
+
+.tarjeta,
+.ver-ajustes {
+  text-decoration: none;
+}
+
+.tarjeta:hover,
+.tarjeta:focus,
+.tarjeta:active,
+.ver-ajustes:hover,
+.ver-ajustes:focus,
+.ver-ajustes:active {
+  text-decoration: none;
+}

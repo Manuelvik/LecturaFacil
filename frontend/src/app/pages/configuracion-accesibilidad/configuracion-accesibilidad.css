@@ -1,0 +1,537 @@
+/* =========================================
+   PÁGINA
+========================================= */
+
+:host {
+  display: block;
+}
+
+
+.configuracion {
+  width: min(850px, calc(100% - 32px));
+
+  margin: 0 auto;
+
+  padding: 28px 0 45px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   CABECERA
+========================================= */
+
+.cabecera {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 28px;
+}
+
+
+.cabecera h1 {
+  margin: 0;
+
+  color: #30264b;
+
+  font-size: 27px;
+  font-weight: 700;
+}
+
+
+.cabecera p {
+  margin: 5px 0 0;
+
+  color: #777083;
+
+  font-size: 14px;
+}
+
+
+/* BOTÓN VOLVER */
+
+.volver {
+  min-width: 45px;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #eee9ff;
+
+  color: #5135b5;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.volver svg {
+  width: 22px;
+  height: 22px;
+
+  display: block;
+}
+
+
+.volver:hover {
+  background: #e4dcff;
+}
+
+
+.volver:active {
+  transform: scale(0.96);
+}
+
+
+/* =========================================
+   GRUPOS
+========================================= */
+
+.grupo {
+  margin-bottom: 20px;
+
+  padding: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2ddeb;
+  border-radius: 16px;
+
+  box-shadow:
+    0 3px 12px rgba(45, 32, 80, 0.05);
+}
+
+
+.titulo-grupo {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding-bottom: 16px;
+
+  margin-bottom: 4px;
+
+  border-bottom: 1px solid #eeeaf3;
+}
+
+
+/* =========================================
+   ICONOS DE GRUPO
+========================================= */
+
+.icono {
+  width: 45px;
+  height: 45px;
+
+  min-width: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f1edff;
+
+  color: #6241c7;
+
+  border-radius: 11px;
+}
+
+
+.icono svg {
+  width: 23px;
+  height: 23px;
+
+  display: block;
+}
+
+
+.titulo-grupo h2 {
+  margin: 0;
+
+  color: #30264b;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+.titulo-grupo p {
+  margin: 4px 0 0;
+
+  color: #8b8495;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   AJUSTES
+========================================= */
+
+.ajuste {
+  min-height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 14px 0;
+}
+
+
+.ajuste + .ajuste {
+  border-top: 1px solid #eeeaf3;
+}
+
+
+.ajuste-vertical {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+
+.informacion {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.informacion strong {
+  color: #41374e;
+
+  font-size: 15px;
+}
+
+
+.informacion span {
+  color: #81798d;
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+
+/* =========================================
+   CONTROLES RANGE
+========================================= */
+
+.control-tamano,
+.control-velocidad {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.control-tamano input,
+.control-velocidad input {
+  flex: 1;
+
+  min-width: 120px;
+
+  accent-color: #6241c7;
+
+  cursor: pointer;
+}
+
+
+.control-tamano input:focus-visible,
+.control-velocidad input:focus-visible {
+  outline: 2px solid #6241c7;
+
+  outline-offset: 4px;
+
+  border-radius: 5px;
+}
+
+
+.control-tamano strong,
+.control-velocidad strong {
+  min-width: 52px;
+
+  color: #573bb2;
+
+  font-size: 14px;
+
+  text-align: right;
+}
+
+
+.etiqueta-rango {
+  color: #6f6878;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   SWITCH
+========================================= */
+
+.switch {
+  position: relative;
+
+  width: 52px;
+  height: 29px;
+
+  min-width: 52px;
+
+  flex-shrink: 0;
+
+  cursor: pointer;
+}
+
+
+.switch input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+}
+
+
+.slider {
+  position: absolute;
+
+  inset: 0;
+
+  background: #c8c4ce;
+
+  border-radius: 30px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease;
+}
+
+
+.slider::before {
+  content: "";
+
+  position: absolute;
+
+  width: 21px;
+  height: 21px;
+
+  left: 4px;
+  top: 4px;
+
+  background: #ffffff;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+.switch input:checked + .slider {
+  background: #6241c7;
+}
+
+
+.switch input:checked + .slider::before {
+  transform: translateX(23px);
+}
+
+
+.switch input:focus-visible + .slider {
+  outline: 2px solid #6241c7;
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================
+   RESTAURAR
+========================================= */
+
+.restaurar {
+  width: 100%;
+
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 12px 18px;
+
+  border: 1px solid #d7cfee;
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #5135b5;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.restaurar svg {
+  width: 20px;
+  height: 20px;
+
+  display: block;
+}
+
+
+.restaurar:hover {
+  background: #f6f3ff;
+
+  border-color: #bcaee1;
+}
+
+
+.restaurar:active {
+  transform: scale(0.99);
+}
+
+
+/* =========================================
+   ACCESIBILIDAD CON TECLADO
+========================================= */
+
+.volver:focus-visible,
+.restaurar:focus-visible {
+  outline: 2px solid #6241c7;
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 700px) {
+
+  .configuracion {
+    width: min(
+      calc(100% - 24px),
+      850px
+    );
+
+    padding-top: 20px;
+    padding-bottom: 35px;
+  }
+
+
+  .cabecera {
+    align-items: flex-start;
+
+    margin-bottom: 24px;
+  }
+
+
+  .cabecera h1 {
+    font-size: 22px;
+  }
+
+
+  .cabecera p {
+    font-size: 13px;
+  }
+
+
+  .grupo {
+    padding: 17px;
+  }
+
+
+  .titulo-grupo {
+    align-items: flex-start;
+  }
+
+
+  .ajuste {
+    gap: 12px;
+  }
+
+
+  .control-tamano,
+  .control-velocidad {
+    flex-wrap: wrap;
+  }
+
+
+  .control-tamano input,
+  .control-velocidad input {
+    min-width: 160px;
+  }
+
+}
+
+
+/* =========================================
+   CELULARES PEQUEÑOS
+========================================= */
+
+@media (max-width: 430px) {
+
+  .ajuste:not(.ajuste-vertical) {
+    align-items: flex-start;
+  }
+
+
+  .informacion {
+    padding-right: 6px;
+  }
+
+
+  .control-tamano input,
+  .control-velocidad input {
+    order: 3;
+
+    width: 100%;
+
+    flex-basis: 100%;
+  }
+
+
+  .control-tamano strong,
+  .control-velocidad strong {
+    margin-left: auto;
+  }
+
+}

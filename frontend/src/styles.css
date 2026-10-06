@@ -1,0 +1,554 @@
+/* =========================================
+   CONFIGURACIÓN GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+:root {
+  --zoom-accesibilidad: 1;
+}
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  min-height: 100%;
+
+  font-family:
+    "Segoe UI",
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  background: #f8f7fb;
+
+  color: #30264b;
+}
+
+
+/* =========================================
+   CONTROLES
+========================================= */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+a {
+  font-family: inherit;
+}
+
+
+/* =========================================
+   TAMAÑO GLOBAL DE ACCESIBILIDAD
+========================================= */
+
+app-root {
+  display: block;
+
+  zoom: var(--zoom-accesibilidad);
+}
+
+
+/* =========================================
+   FOCO DE TECLADO GLOBAL
+========================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #6241c7;
+
+  outline-offset: 2px;
+}
+
+
+/* =====================================================
+   ALTO CONTRASTE GLOBAL
+===================================================== */
+
+body.alto-contraste-global {
+  background: #000000 !important;
+
+  color: #ffffff !important;
+}
+
+
+body.alto-contraste-global app-root {
+  background: #000000 !important;
+
+  color: #ffffff !important;
+}
+
+
+/* =========================================
+   FONDOS PRINCIPALES
+========================================= */
+
+body.alto-contraste-global main,
+
+body.alto-contraste-global .pagina-inicio,
+body.alto-contraste-global .pagina-lectura,
+body.alto-contraste-global .pagina-archivos,
+body.alto-contraste-global .pagina-favoritos,
+body.alto-contraste-global .pagina-perfil,
+
+body.alto-contraste-global .configuracion,
+body.alto-contraste-global .asistente {
+  background: #000000 !important;
+
+  color: #ffffff !important;
+}
+
+
+/* =========================================
+   TARJETAS Y SECCIONES
+========================================= */
+
+body.alto-contraste-global .seccion,
+body.alto-contraste-global .tarjeta,
+body.alto-contraste-global .tarjeta-archivo,
+body.alto-contraste-global .tarjeta-favorito,
+body.alto-contraste-global .grupo,
+body.alto-contraste-global .panel-asistente,
+body.alto-contraste-global .informacion-voz,
+body.alto-contraste-global .respuesta,
+body.alto-contraste-global .texto-reconocido,
+body.alto-contraste-global .contenido-completo,
+body.alto-contraste-global .vacio,
+body.alto-contraste-global .buscador {
+  background: #000000 !important;
+
+  color: #ffffff !important;
+
+  border-color: #ffff00 !important;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+body.alto-contraste-global .navbar {
+  background: #000000 !important;
+
+  border-color: #ffff00 !important;
+}
+
+
+body.alto-contraste-global .nav-item {
+  color: #ffffff !important;
+}
+
+
+body.alto-contraste-global .nav-item.activo {
+  color: #ffff00 !important;
+}
+
+
+body.alto-contraste-global .nav-item.activo::after {
+  background: #ffff00 !important;
+}
+
+
+/* =========================================
+   TÍTULOS
+========================================= */
+
+body.alto-contraste-global h1,
+body.alto-contraste-global h2,
+body.alto-contraste-global h3,
+body.alto-contraste-global strong {
+  color: #ffff00 !important;
+}
+
+
+/* =========================================
+   TEXTO SECUNDARIO
+========================================= */
+
+body.alto-contraste-global p,
+body.alto-contraste-global small,
+body.alto-contraste-global label,
+body.alto-contraste-global .fecha,
+body.alto-contraste-global .vista-previa,
+body.alto-contraste-global .descripcion,
+body.alto-contraste-global .subtitulo,
+body.alto-contraste-global .resumen {
+  color: #ffffff !important;
+}
+
+
+/* =========================================
+   ENLACES
+========================================= */
+
+body.alto-contraste-global a {
+  color: #ffff00 !important;
+}
+
+
+/* =========================================
+   INPUTS Y TEXTAREA
+========================================= */
+
+body.alto-contraste-global input,
+body.alto-contraste-global textarea,
+body.alto-contraste-global select {
+  background: #000000 !important;
+
+  color: #ffffff !important;
+
+  border-color: #ffff00 !important;
+}
+
+
+body.alto-contraste-global input::placeholder,
+body.alto-contraste-global textarea::placeholder {
+  color: #d7d7d7 !important;
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
+
+body.alto-contraste-global button {
+  border-color: #ffff00 !important;
+
+  color: #ffff00 !important;
+}
+
+
+body.alto-contraste-global button:disabled {
+  color: #bcbcbc !important;
+
+  border-color: #777777 !important;
+}
+
+
+/* =========================================
+   ICONOS SVG
+========================================= */
+
+body.alto-contraste-global svg {
+  color: inherit;
+}
+
+
+body.alto-contraste-global .icono-opcion,
+body.alto-contraste-global .icono-documento,
+body.alto-contraste-global .icono-vacio,
+body.alto-contraste-global .icono-seccion,
+body.alto-contraste-global .icono-preferencia,
+body.alto-contraste-global .icono-comando,
+body.alto-contraste-global .icono-mensaje {
+  background: #000000 !important;
+
+  color: #ffff00 !important;
+
+  border: 1px solid #ffff00 !important;
+}
+
+
+/* =========================================
+   BOTONES PRINCIPALES MORADOS
+========================================= */
+
+body.alto-contraste-global .guardar,
+body.alto-contraste-global .guardar-documento,
+body.alto-contraste-global .boton-voz,
+body.alto-contraste-global .boton-hablar,
+body.alto-contraste-global .crear-lectura,
+body.alto-contraste-global .ver-archivos {
+  background: #ffff00 !important;
+
+  color: #000000 !important;
+
+  border-color: #ffff00 !important;
+}
+
+
+body.alto-contraste-global .guardar svg,
+body.alto-contraste-global .guardar-documento svg,
+body.alto-contraste-global .boton-voz svg,
+body.alto-contraste-global .boton-hablar svg,
+body.alto-contraste-global .crear-lectura svg,
+body.alto-contraste-global .ver-archivos svg {
+  color: #000000 !important;
+}
+
+
+/* =========================================
+   INTERRUPTORES
+========================================= */
+
+body.alto-contraste-global .slider {
+  background: #ffffff !important;
+
+  border: 1px solid #ffff00 !important;
+}
+
+
+body.alto-contraste-global
+.switch input:checked + .slider {
+  background: #ffff00 !important;
+}
+
+
+body.alto-contraste-global
+.slider::before {
+  background: #000000 !important;
+}
+
+
+/* =========================================
+   ESTADOS ACTIVOS
+========================================= */
+
+body.alto-contraste-global .estado,
+body.alto-contraste-global .valor {
+  background: #000000 !important;
+
+  color: #ffffff !important;
+
+  border: 1px solid #ffffff;
+}
+
+
+body.alto-contraste-global .estado.activo {
+  background: #ffff00 !important;
+
+  color: #000000 !important;
+
+  border-color: #ffff00 !important;
+}
+
+
+/* =========================================
+   FAVORITOS
+========================================= */
+
+body.alto-contraste-global .favorito,
+body.alto-contraste-global .estrella {
+  background: #000000 !important;
+
+  color: #ffff00 !important;
+
+  border: 1px solid #ffff00 !important;
+}
+
+
+/* =========================================
+   FOCO EN ALTO CONTRASTE
+========================================= */
+
+body.alto-contraste-global
+button:focus-visible,
+
+body.alto-contraste-global
+a:focus-visible,
+
+body.alto-contraste-global
+input:focus-visible,
+
+body.alto-contraste-global
+textarea:focus-visible {
+
+  outline: 3px solid #00ffff !important;
+
+  outline-offset: 3px;
+}
+
+
+/* =====================================================
+   MODO SIMPLIFICADO
+===================================================== */
+
+
+/*
+ * Ocultamos únicamente información secundaria
+ * conocida.
+ *
+ * No usamos:
+ * .texto span
+ *
+ * de manera global porque podría esconder
+ * información necesaria en otras pantallas.
+ */
+
+body.modo-simplificado-global
+.pagina-inicio .ayuda {
+  display: none !important;
+}
+
+
+body.modo-simplificado-global
+.pagina-inicio .marca p {
+  display: none !important;
+}
+
+
+body.modo-simplificado-global
+.pagina-inicio .texto span {
+  display: none !important;
+}
+
+
+/* =========================================
+   HACER CONTROLES MÁS CLAROS
+========================================= */
+
+body.modo-simplificado-global button {
+  min-height: 44px;
+}
+
+
+body.modo-simplificado-global .tarjeta,
+body.modo-simplificado-global .tarjeta-archivo,
+body.modo-simplificado-global .tarjeta-favorito,
+body.modo-simplificado-global .grupo {
+  box-shadow: none !important;
+}
+
+
+/* =========================================
+   MÁS ESPACIO ENTRE ELEMENTOS
+========================================= */
+
+body.modo-simplificado-global
+.opciones-entrada,
+
+body.modo-simplificado-global
+.lista-comandos,
+
+body.modo-simplificado-global
+.lista-archivos,
+
+body.modo-simplificado-global
+.lista-favoritos {
+  gap: 18px !important;
+}
+
+
+/* =========================================
+   TEXTO IMPORTANTE MÁS VISIBLE
+========================================= */
+
+body.modo-simplificado-global
+.tarjeta strong,
+
+body.modo-simplificado-global
+.opcion strong {
+  font-size: 17px;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+
+}
+
+/* =========================================
+   AJUSTE FINAL - ALTO CONTRASTE EN INICIO
+========================================= */
+
+body.alto-contraste-global .opcion-accesibilidad,
+body.alto-contraste-global .ayuda,
+body.alto-contraste-global .tarjeta {
+  background: #000000 !important;
+
+  color: #ffffff !important;
+
+  border: 1px solid #ffff00 !important;
+}
+
+
+/* Iconos de accesibilidad rápida */
+
+body.alto-contraste-global .opcion-accesibilidad .icono-minimalista,
+body.alto-contraste-global .tarjeta .icono-minimalista {
+  background: #000000 !important;
+
+  color: #ffff00 !important;
+
+  border: 1px solid #ffff00 !important;
+}
+
+
+/* Títulos */
+
+body.alto-contraste-global
+.opcion-accesibilidad strong,
+
+body.alto-contraste-global
+.tarjeta strong,
+
+body.alto-contraste-global
+.ayuda strong {
+  color: #ffff00 !important;
+}
+
+
+/* Textos secundarios */
+
+body.alto-contraste-global
+.opcion-accesibilidad small,
+
+body.alto-contraste-global
+.tarjeta .texto span,
+
+body.alto-contraste-global
+.ayuda p {
+  color: #ffffff !important;
+}
+
+
+/* Opción activa */
+
+body.alto-contraste-global
+.opcion-accesibilidad.activa {
+  background: #111111 !important;
+
+  border: 2px solid #ffff00 !important;
+}
+
+
+/* Botón configurar */
+
+body.alto-contraste-global
+.ayuda button,
+body.alto-contraste-global
+.ayuda a {
+  background: #ffff00 !important;
+
+  color: #000000 !important;
+
+  border-color: #ffff00 !important;
+}

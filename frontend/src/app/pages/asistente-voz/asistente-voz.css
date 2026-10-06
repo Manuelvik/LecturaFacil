@@ -1,0 +1,660 @@
+/* =========================================
+   PÁGINA
+========================================= */
+
+:host {
+  display: block;
+}
+
+
+.asistente {
+  width: min(900px, calc(100% - 32px));
+
+  margin: 0 auto;
+
+  padding: 28px 0 40px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   CABECERA
+========================================= */
+
+.cabecera {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 28px;
+}
+
+
+.cabecera h1 {
+  margin: 0;
+
+  color: #30264b;
+
+  font-size: 27px;
+  font-weight: 700;
+}
+
+
+.cabecera p {
+  margin: 5px 0 0;
+
+  color: #777083;
+
+  font-size: 14px;
+}
+
+
+/* VOLVER */
+
+.volver {
+  min-width: 45px;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #eee9ff;
+
+  color: #5135b5;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.volver svg {
+  width: 22px;
+  height: 22px;
+
+  display: block;
+}
+
+
+.volver:hover {
+  background: #e4dcff;
+}
+
+
+.volver:active {
+  transform: scale(0.96);
+}
+
+
+/* =========================================
+   INFORMACIÓN DEL MICRÓFONO
+========================================= */
+
+.informacion-voz {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 18px;
+
+  margin-bottom: 24px;
+
+  background: #f7f4ff;
+
+  border: 1px solid #ddd5f4;
+  border-radius: 16px;
+}
+
+
+.icono-info {
+  min-width: 48px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #6241c7;
+
+  color: #ffffff;
+
+  border-radius: 50%;
+}
+
+
+.icono-info svg {
+  width: 24px;
+  height: 24px;
+
+  display: block;
+}
+
+
+.informacion-voz strong {
+  color: #3d2a85;
+
+  font-size: 14px;
+}
+
+
+.informacion-voz p {
+  margin: 5px 0 0;
+
+  color: #6f6783;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   PANEL PRINCIPAL
+========================================= */
+
+.panel-asistente {
+  margin-bottom: 30px;
+
+  padding: 35px 20px;
+
+  text-align: center;
+
+  background: #f8f6ff;
+
+  border: 1px solid #e4ddf7;
+  border-radius: 20px;
+}
+
+
+/* MICRÓFONO GRANDE */
+
+.microfono {
+  width: 100px;
+  height: 100px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #6241c7;
+
+  color: #ffffff;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 8px 25px rgba(98, 65, 199, 0.25);
+}
+
+
+.microfono svg {
+  width: 43px;
+  height: 43px;
+
+  display: block;
+}
+
+
+.microfono.escuchando {
+  background: #b73838;
+
+  animation: pulso 1.2s infinite;
+}
+
+
+@keyframes pulso {
+
+  0% {
+    transform: scale(1);
+
+    box-shadow:
+      0 0 0 0 rgba(183, 56, 56, 0.32);
+  }
+
+
+  70% {
+    transform: scale(1.05);
+
+    box-shadow:
+      0 0 0 20px rgba(183, 56, 56, 0);
+  }
+
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+
+.panel-asistente h2 {
+  margin: 0 0 8px;
+
+  color: #35276e;
+
+  font-size: 21px;
+}
+
+
+.descripcion {
+  margin: 0 0 22px;
+
+  color: #777083;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   HABLAR / DETENER
+========================================= */
+
+.boton-hablar,
+.boton-detener {
+  min-width: 180px;
+  min-height: 50px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 22px;
+
+  border: none;
+  border-radius: 12px;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.boton-hablar svg,
+.boton-detener svg {
+  width: 21px;
+  height: 21px;
+
+  display: block;
+}
+
+
+.boton-hablar {
+  background: #6241c7;
+}
+
+
+.boton-hablar:hover {
+  background: #5134ae;
+}
+
+
+.boton-detener {
+  background: #b73838;
+}
+
+
+.boton-detener:hover {
+  background: #9e3030;
+}
+
+
+.boton-hablar:active,
+.boton-detener:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================================
+   RESULTADO
+========================================= */
+
+.resultado {
+  margin-bottom: 25px;
+}
+
+
+.resultado h2,
+.comandos h2 {
+  margin: 0 0 13px;
+
+  color: #30264b;
+
+  font-size: 18px;
+}
+
+
+.texto-reconocido {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 17px;
+
+  background: #ffffff;
+
+  border: 1px solid #ded8ec;
+  border-radius: 14px;
+}
+
+
+.icono-mensaje {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f1edff;
+
+  color: #6241c7;
+
+  border-radius: 10px;
+}
+
+
+.icono-mensaje svg {
+  width: 20px;
+  height: 20px;
+
+  display: block;
+}
+
+
+.texto-reconocido p {
+  margin: 0;
+
+  color: #40374d;
+
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+.sin-texto {
+  padding: 20px;
+
+  text-align: center;
+
+  color: #88818f;
+
+  border: 1px dashed #cfc7e3;
+  border-radius: 14px;
+}
+
+
+/* =========================================
+   RESPUESTA
+========================================= */
+
+.respuesta {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 18px;
+
+  margin-bottom: 30px;
+
+  background: #eee9ff;
+
+  border-radius: 16px;
+}
+
+
+.respuesta-icono {
+  min-width: 45px;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #6241c7;
+
+  color: #ffffff;
+
+  border-radius: 50%;
+}
+
+
+.respuesta-icono svg {
+  width: 22px;
+  height: 22px;
+
+  display: block;
+}
+
+
+.respuesta strong {
+  color: #432c96;
+}
+
+
+.respuesta p {
+  margin: 4px 0 0;
+
+  color: #665c82;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   COMANDOS
+========================================= */
+
+.comandos {
+  margin-bottom: 30px;
+}
+
+
+.subtitulo {
+  margin: -5px 0 15px;
+
+  color: #777083;
+
+  font-size: 13px;
+}
+
+
+.lista-comandos {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+
+.lista-comandos button {
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 11px 14px;
+
+  border: 1px solid #ded8ec;
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #403466;
+
+  text-align: left;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.lista-comandos button:hover {
+  background: #f5f2ff;
+
+  border-color: #9f8bd7;
+}
+
+
+.lista-comandos button:active {
+  transform: scale(0.99);
+}
+
+
+/* ICONO DE CADA COMANDO */
+
+.icono-comando {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f1edff;
+
+  color: #6241c7;
+
+  border-radius: 9px;
+}
+
+
+.icono-comando svg {
+  width: 19px;
+  height: 19px;
+
+  display: block;
+}
+
+
+.icono-comando.icono-texto {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+
+/* =========================================
+   ACCESIBILIDAD CON TECLADO
+========================================= */
+
+.volver:focus-visible,
+.boton-hablar:focus-visible,
+.boton-detener:focus-visible,
+.lista-comandos button:focus-visible {
+  outline: 2px solid #6241c7;
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================
+   TABLET / CELULAR
+========================================= */
+
+@media (max-width: 700px) {
+
+  .asistente {
+    width: min(
+      calc(100% - 24px),
+      900px
+    );
+
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+
+  .cabecera {
+    align-items: flex-start;
+
+    margin-bottom: 24px;
+  }
+
+
+  .cabecera h1 {
+    font-size: 22px;
+  }
+
+
+  .cabecera p {
+    font-size: 13px;
+  }
+
+
+  .informacion-voz {
+    align-items: flex-start;
+  }
+
+
+  .panel-asistente {
+    padding: 30px 15px;
+  }
+
+
+  .microfono {
+    width: 85px;
+    height: 85px;
+  }
+
+
+  .microfono svg {
+    width: 36px;
+    height: 36px;
+  }
+
+
+  .lista-comandos {
+    grid-template-columns: 1fr;
+  }
+
+
+  .boton-hablar,
+  .boton-detener {
+    width: 100%;
+  }
+
+}

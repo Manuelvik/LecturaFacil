@@ -1,0 +1,473 @@
+<div class="inicio">
+
+  <!-- ENCABEZADO -->
+  <header class="encabezado">
+    <div class="marca">
+
+      <div class="logo-principal">
+        <img
+          src="/Logo%20de%20LecturaFácil%20con%20libro%20accesible.png"
+          alt="Logo de LecturaFácil"
+        />
+      </div>
+
+      <div>
+        <h1>LecturaFácil</h1>
+        <p>Información accesible para todos</p>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="boton-perfil"
+      routerLink="/perfil"
+      aria-label="Ir al perfil">
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true">
+
+        <circle cx="12" cy="8" r="4"></circle>
+
+        <path
+          d="M4.5 20c.8-4 3.5-6 7.5-6s6.7 2 7.5 6">
+        </path>
+
+      </svg>
+
+    </button>
+  </header>
+
+
+
+  <section class="bienvenida">
+    <p class="saludo">Hola </p>
+    <h2>¿Qué necesitas hacer?</h2>
+    <p>Selecciona una opción para comenzar.</p>
+  </section>
+
+
+  <section class="seccion">
+
+    <h3>Acciones rápidas</h3>
+
+    <div class="acciones">
+
+      <!-- LEER INFORMACIÓN -->
+
+      <a
+        class="tarjeta"
+        routerLink="/lectura">
+
+    <span class="icono-minimalista">
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true">
+
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+
+      </svg>
+
+    </span>
+
+        <div class="texto">
+
+          <strong>
+            Leer información
+          </strong>
+
+          <span>
+        Escribe o pega un texto
+      </span>
+
+        </div>
+
+      </a>
+
+
+      <!-- ESCANEAR TEXTO -->
+
+      <a
+        class="tarjeta"
+        routerLink="/lectura">
+
+    <span class="icono-minimalista">
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true">
+
+        <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
+        <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
+        <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
+        <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path>
+
+        <rect
+          x="7"
+          y="8"
+          width="10"
+          height="8"
+          rx="1">
+        </rect>
+
+        <path d="M9 11h6"></path>
+        <path d="M9 13h4"></path>
+
+      </svg>
+
+    </span>
+
+        <div class="texto">
+
+          <strong>
+            Escanear texto
+          </strong>
+
+          <span>
+        Reconoce texto de una imagen
+      </span>
+
+        </div>
+
+      </a>
+
+
+      <!-- COMANDOS DE VOZ -->
+
+      <a
+        class="tarjeta"
+        routerLink="/asistente-voz">
+
+    <span class="icono-minimalista">
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true">
+
+        <rect
+          x="9"
+          y="2"
+          width="6"
+          height="12"
+          rx="3">
+        </rect>
+
+        <path d="M5 10a7 7 0 0 0 14 0"></path>
+        <path d="M12 17v4"></path>
+        <path d="M8 21h8"></path>
+
+      </svg>
+
+    </span>
+
+        <div class="texto">
+
+          <strong>
+            Comandos de voz
+          </strong>
+
+          <span>
+        Consulta los comandos disponibles
+      </span>
+
+        </div>
+
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- ACCESIBILIDAD RÁPIDA -->
+  <section class="seccion accesibilidad">
+
+    <div class="titulo-accesibilidad">
+      <h3>Accesibilidad rápida</h3>
+
+      <a
+        class="ver-ajustes"
+        routerLink="/configuracion-accesibilidad">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true">
+
+          <circle
+            cx="12"
+            cy="12"
+            r="3">
+          </circle>
+
+          <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0 10 3V2.8h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9A1.7 1.7 0 0 0 21 10h.2v4H21a1.7 1.7 0 0 0-1.6 1z">
+          </path>
+
+        </svg>
+
+        <span>
+    Ver todos los ajustes
+  </span>
+
+      </a>
+    </div>
+
+
+    <div class="opciones-accesibilidad">
+
+      <!-- TEXTO GRANDE -->
+
+      <button
+        type="button"
+        class="opcion-accesibilidad"
+        [class.activa]="textoGrandeActivo()"
+        (click)="cambiarTextoGrande()"
+        [attr.aria-pressed]="textoGrandeActivo()">
+
+    <span class="icono-minimalista icono-texto">
+      Aa
+    </span>
+
+        <span class="texto-accesibilidad">
+
+      <strong>
+        Texto grande
+      </strong>
+
+      <small>
+        {{
+          textoGrandeActivo()
+            ? 'Activado'
+            : 'Desactivado'
+        }}
+      </small>
+
+    </span>
+
+      </button>
+
+
+      <!-- ALTO CONTRASTE -->
+
+      <button
+        type="button"
+        class="opcion-accesibilidad"
+        [class.activa]="accesibilidad.altoContraste()"
+        (click)="cambiarContraste()"
+        [attr.aria-pressed]="accesibilidad.altoContraste()">
+
+    <span class="icono-minimalista">
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        aria-hidden="true">
+
+        <circle
+          cx="12"
+          cy="12"
+          r="8">
+        </circle>
+
+        <path
+          d="M12 4a8 8 0 0 1 0 16z"
+          fill="currentColor">
+        </path>
+
+      </svg>
+
+    </span>
+
+        <span class="texto-accesibilidad">
+
+      <strong>
+        Alto contraste
+      </strong>
+
+      <small>
+        {{
+          accesibilidad.altoContraste()
+            ? 'Activado'
+            : 'Desactivado'
+        }}
+      </small>
+
+    </span>
+
+      </button>
+
+
+      <!-- NAVEGACIÓN POR VOZ -->
+
+      <button
+        type="button"
+        class="opcion-accesibilidad"
+        [class.activa]="accesibilidad.navegacionVoz()"
+        (click)="cambiarNavegacionVoz()"
+        [attr.aria-pressed]="accesibilidad.navegacionVoz()">
+
+    <span class="icono-minimalista">
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true">
+
+        <rect
+          x="9"
+          y="2"
+          width="6"
+          height="12"
+          rx="3">
+        </rect>
+
+        <path d="M5 10a7 7 0 0 0 14 0"></path>
+        <path d="M12 17v4"></path>
+        <path d="M8 21h8"></path>
+
+      </svg>
+
+    </span>
+
+        <span class="texto-accesibilidad">
+
+      <strong>
+        Navegación por voz
+      </strong>
+
+      <small>
+        {{
+          accesibilidad.navegacionVoz()
+            ? 'Activada'
+            : 'Desactivada'
+        }}
+      </small>
+
+    </span>
+
+      </button>
+
+
+      <!-- MODO SIMPLE -->
+
+      <button
+        type="button"
+        class="opcion-accesibilidad"
+        [class.activa]="accesibilidad.modoSimplificado()"
+        (click)="cambiarModoSimple()"
+        [attr.aria-pressed]="accesibilidad.modoSimplificado()">
+
+    <span class="icono-minimalista">
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linejoin="round"
+        aria-hidden="true">
+
+        <rect
+          x="4"
+          y="4"
+          width="6"
+          height="6"
+          rx="1">
+        </rect>
+
+        <rect
+          x="14"
+          y="4"
+          width="6"
+          height="6"
+          rx="1">
+        </rect>
+
+        <rect
+          x="4"
+          y="14"
+          width="6"
+          height="6"
+          rx="1">
+        </rect>
+
+        <rect
+          x="14"
+          y="14"
+          width="6"
+          height="6"
+          rx="1">
+        </rect>
+
+      </svg>
+
+    </span>
+
+        <span class="texto-accesibilidad">
+
+      <strong>
+        Modo simple
+      </strong>
+
+      <small>
+        {{
+          accesibilidad.modoSimplificado()
+            ? 'Activado'
+            : 'Desactivado'
+        }}
+      </small>
+
+    </span>
+
+      </button>
+
+    </div>
+  </section>
+
+
+  <!-- AYUDA -->
+  <section class="ayuda">
+    <div class="ayuda-icono">?</div>
+
+    <div>
+      <strong>¿Necesitas ayuda?</strong>
+      <p>Configura la aplicación según tus necesidades.</p>
+    </div>
+
+    <button routerLink="/configuracion-accesibilidad">
+      Configurar
+    </button>
+  </section>
+
+</div>

@@ -1,0 +1,649 @@
+/* =========================================
+   PÁGINA
+========================================= */
+
+.pagina-archivos {
+  width: min(900px, calc(100% - 32px));
+
+  margin: 0 auto;
+
+  padding: 28px 0 35px;
+}
+
+
+/* =========================================
+   CABECERA
+========================================= */
+
+.cabecera {
+  margin-bottom: 22px;
+}
+
+
+.cabecera h1 {
+  margin: 0;
+
+  color: #30264b;
+
+  font-size: 28px;
+  font-weight: 700;
+}
+
+
+.cabecera p {
+  margin: 6px 0 0;
+
+  color: #777083;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   BUSCADOR
+========================================= */
+
+.buscador {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 4px 15px;
+
+  background: #ffffff;
+
+  border: 1px solid #ded9e8;
+  border-radius: 13px;
+
+  margin-bottom: 12px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.buscador:focus-within {
+  border-color: #8c75d9;
+
+  box-shadow:
+    0 0 0 3px rgba(98, 65, 199, 0.08);
+}
+
+
+.icono-busqueda {
+  width: 22px;
+  height: 22px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #8d8798;
+}
+
+
+.icono-busqueda svg {
+  width: 20px;
+  height: 20px;
+
+  display: block;
+}
+
+
+.buscador input {
+  width: 100%;
+
+  padding: 12px 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #30264b;
+
+  font-size: 15px;
+}
+
+
+.buscador input::placeholder {
+  color: #aaa4b4;
+}
+
+
+/* =========================================
+   RESUMEN
+========================================= */
+
+.resumen {
+  margin-bottom: 20px;
+
+  color: #777083;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   LISTA
+========================================= */
+
+.lista-archivos {
+  display: grid;
+
+  gap: 16px;
+}
+
+
+/* =========================================
+   TARJETA
+========================================= */
+
+.tarjeta-archivo {
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2ddeb;
+  border-radius: 16px;
+
+  box-shadow:
+    0 3px 12px rgba(45, 32, 80, 0.06);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.tarjeta-archivo:hover {
+  border-color: #d3cae5;
+
+  box-shadow:
+    0 5px 16px rgba(45, 32, 80, 0.08);
+}
+
+
+.archivo-superior {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+}
+
+
+/* =========================================
+   ICONO DOCUMENTO
+========================================= */
+
+.icono-documento {
+  min-width: 48px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: #f1edff;
+
+  color: #6241c7;
+
+  border-radius: 12px;
+}
+
+
+.icono-documento svg {
+  width: 24px;
+  height: 24px;
+
+  display: block;
+}
+
+
+/* =========================================
+   INFORMACIÓN DEL DOCUMENTO
+========================================= */
+
+.informacion {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.informacion h2 {
+  margin: 0;
+
+  color: #30264b;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  overflow-wrap: anywhere;
+}
+
+
+.fecha {
+  margin: 5px 0 0;
+
+  color: #918a9d;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   FAVORITO
+========================================= */
+
+.favorito {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f7f5fa;
+
+  color: #8d8795;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.favorito svg {
+  width: 22px;
+  height: 22px;
+
+  display: block;
+}
+
+
+.favorito:hover {
+  background: #f0ecf7;
+
+  color: #6241c7;
+}
+
+
+.favorito:active {
+  transform: scale(0.94);
+}
+
+
+.favorito.activo {
+  background: #fff7d8;
+
+  color: #d49b00;
+}
+
+
+/* =========================================
+   TEXTO
+========================================= */
+
+.vista-previa {
+  margin: 17px 0;
+
+  color: #625b6c;
+
+  font-size: 14px;
+  line-height: 1.6;
+
+  white-space: pre-line;
+}
+
+
+.contenido-completo {
+  margin-bottom: 17px;
+
+  padding: 16px;
+
+  background: #f8f6fc;
+
+  border: 1px solid #ebe6f3;
+  border-radius: 12px;
+}
+
+
+.contenido-completo strong {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #4e388f;
+
+  font-size: 14px;
+}
+
+
+.contenido-completo p {
+  margin: 0;
+
+  color: #514b5b;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  white-space: pre-wrap;
+}
+
+
+/* =========================================
+   ACCIONES
+========================================= */
+
+.acciones {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding-top: 14px;
+
+  border-top: 1px solid #eeeaf3;
+}
+
+
+.accion {
+  min-height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 9px 13px;
+
+  border: 1px solid #ddd7e8;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #544a67;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.icono-accion {
+  width: 18px;
+  height: 18px;
+
+  display: block;
+
+  flex-shrink: 0;
+}
+
+
+.accion:hover {
+  background: #f5f2fc;
+
+  border-color: #bdb0df;
+}
+
+
+.accion:active {
+  transform: scale(0.98);
+}
+
+
+/* ESCUCHAR */
+
+.accion.escuchar {
+  color: #573bb2;
+}
+
+
+.accion.escuchar:hover {
+  background: #f2effc;
+
+  border-color: #c9bce9;
+}
+
+
+/* ELIMINAR */
+
+.accion.eliminar {
+  margin-left: auto;
+
+  color: #a63737;
+}
+
+
+.accion.eliminar:hover {
+  background: #fff2f2;
+
+  border-color: #e3b8b8;
+}
+
+
+/* =========================================
+   ESTADO VACÍO
+========================================= */
+
+.vacio {
+  margin-top: 40px;
+
+  padding: 45px 25px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e4dfec;
+  border-radius: 18px;
+}
+
+
+.icono-vacio {
+  width: 64px;
+  height: 64px;
+
+  margin: 0 auto 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f1edff;
+
+  color: #6241c7;
+
+  border-radius: 16px;
+}
+
+
+.icono-vacio svg {
+  width: 31px;
+  height: 31px;
+
+  display: block;
+}
+
+
+.vacio h2 {
+  margin: 0 0 8px;
+
+  color: #30264b;
+
+  font-size: 20px;
+}
+
+
+.vacio p {
+  max-width: 430px;
+
+  margin: 0 auto 20px;
+
+  color: #777083;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   CREAR LECTURA
+========================================= */
+
+.crear-lectura {
+  min-height: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 11px 18px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #6241c7;
+
+  color: #ffffff;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.crear-lectura svg {
+  width: 19px;
+  height: 19px;
+
+  display: block;
+}
+
+
+.crear-lectura:hover {
+  background: #5134ae;
+}
+
+
+.crear-lectura:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================================
+   ACCESIBILIDAD CON TECLADO
+========================================= */
+
+.favorito:focus-visible,
+.accion:focus-visible,
+.crear-lectura:focus-visible {
+  outline: 2px solid #6241c7;
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+  .pagina-archivos {
+    width: min(
+      calc(100% - 24px),
+      900px
+    );
+
+    padding-top: 20px;
+  }
+
+
+  .cabecera h1 {
+    font-size: 24px;
+  }
+
+
+  .tarjeta-archivo {
+    padding: 16px;
+  }
+
+
+  .icono-documento {
+    width: 44px;
+    height: 44px;
+
+    min-width: 44px;
+  }
+
+
+  .icono-documento svg {
+    width: 22px;
+    height: 22px;
+  }
+
+
+  .favorito {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .acciones {
+    flex-wrap: wrap;
+  }
+
+
+  .accion {
+    flex: 1;
+
+    min-width: 110px;
+  }
+
+
+  .accion.eliminar {
+    margin-left: 0;
+
+    flex-basis: 100%;
+  }
+
+
+  .vacio {
+    padding: 38px 20px;
+  }
+
+}
