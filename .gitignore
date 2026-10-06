@@ -1,0 +1,15 @@
+# Angular
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+
+# Spring Boot futuro
+backend/target/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Sistema
+.DS_Store
+Thumbs.db
