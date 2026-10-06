@@ -13,7 +13,7 @@
         Favoritos
       </h1>
 
-      <p>
+      <p class="solo-normal">
         Accede rápidamente a tus contenidos preferidos
       </p>
 
@@ -28,7 +28,7 @@
 
   @if (favoritos().length > 0) {
 
-  <div class="resumen">
+  <div class="resumen solo-normal">
 
     {{ favoritos().length }}
 
@@ -75,7 +75,7 @@
     </h2>
 
 
-    <p>
+    <p class="solo-normal">
       Marca con una estrella los documentos
       que quieras encontrar rápidamente.
     </p>
@@ -169,7 +169,7 @@
           </h2>
 
 
-          <p class="fecha">
+          <p class="fecha solo-normal">
 
             {{
             documento.fecha
@@ -212,7 +212,7 @@
 
       <!-- VISTA PREVIA -->
 
-      <p class="vista-previa">
+      <p class="vista-previa solo-normal">
 
         {{
         documento.contenido.length > 130

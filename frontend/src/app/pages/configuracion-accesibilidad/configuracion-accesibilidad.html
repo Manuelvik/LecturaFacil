@@ -36,9 +36,11 @@
         Configuración de accesibilidad
       </h1>
 
+      @if (!accesibilidad.modoSimplificado()) {
       <p>
         Personaliza LecturaFácil según tus necesidades
       </p>
+      }
 
     </div>
 
@@ -85,9 +87,11 @@
           Accesibilidad visual
         </h2>
 
+        @if (!accesibilidad.modoSimplificado()) {
         <p>
           Adapta la visualización de la aplicación.
         </p>
+        }
 
       </div>
 
@@ -104,9 +108,11 @@
           Tamaño de interfaz
         </strong>
 
+        @if (!accesibilidad.modoSimplificado()) {
         <span>
-          Aumenta textos, botones y elementos.
-        </span>
+            Aumenta textos, botones y elementos.
+          </span>
+        }
 
       </div>
 
@@ -153,9 +159,11 @@
           Alto contraste
         </strong>
 
+        @if (!accesibilidad.modoSimplificado()) {
         <span>
-          Mejora la diferenciación entre texto y fondo.
-        </span>
+            Mejora la diferenciación entre texto y fondo.
+          </span>
+        }
 
       </div>
 
@@ -222,9 +230,11 @@
           Accesibilidad auditiva
         </h2>
 
+        @if (!accesibilidad.modoSimplificado()) {
         <p>
           Opciones de apoyo para contenido auditivo.
         </p>
+        }
 
       </div>
 
@@ -239,9 +249,11 @@
           Subtítulos automáticos
         </strong>
 
+        @if (!accesibilidad.modoSimplificado()) {
         <span>
-          Mostrar texto cuando exista contenido multimedia compatible.
-        </span>
+            Mostrar texto cuando exista contenido multimedia compatible.
+          </span>
+        }
 
       </div>
 
@@ -308,9 +320,11 @@
           Accesibilidad motora
         </h2>
 
+        @if (!accesibilidad.modoSimplificado()) {
         <p>
           Reduce la necesidad de interacción táctil.
         </p>
+        }
 
       </div>
 
@@ -325,9 +339,11 @@
           Navegación mediante voz
         </strong>
 
+        @if (!accesibilidad.modoSimplificado()) {
         <span>
-          Permite utilizar comandos para desplazarse por la aplicación.
-        </span>
+            Permite utilizar comandos para desplazarse por la aplicación.
+          </span>
+        }
 
       </div>
 
@@ -412,9 +428,11 @@
           Accesibilidad cognitiva
         </h2>
 
+        @if (!accesibilidad.modoSimplificado()) {
         <p>
           Simplifica la presentación de información.
         </p>
+        }
 
       </div>
 
@@ -429,9 +447,11 @@
           Modo simplificado
         </strong>
 
+        @if (!accesibilidad.modoSimplificado()) {
         <span>
-          Reduce elementos secundarios y facilita la navegación.
-        </span>
+            Reduce elementos secundarios y facilita la navegación.
+          </span>
+        }
 
       </div>
 
@@ -490,9 +510,11 @@
           Lectura por voz
         </h2>
 
+        @if (!accesibilidad.modoSimplificado()) {
         <p>
           Configura la velocidad de reproducción.
         </p>
+        }
 
       </div>
 
@@ -507,9 +529,11 @@
           Velocidad de lectura
         </strong>
 
+        @if (!accesibilidad.modoSimplificado()) {
         <span>
-          Ajusta la velocidad de la voz.
-        </span>
+            Ajusta la velocidad de la voz.
+          </span>
+        }
 
       </div>
 
@@ -580,3 +604,4 @@
 
 
 </div>
+

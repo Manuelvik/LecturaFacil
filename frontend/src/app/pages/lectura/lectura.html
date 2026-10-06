@@ -1,6 +1,7 @@
 <div
   class="pagina-lectura"
-  [class.alto-contraste]="altoContraste">
+  [class.alto-contraste]="altoContraste"
+  [class.modo-simple]="accesibilidad.modoSimplificado()">
 
 
   <!-- =========================================
@@ -63,9 +64,13 @@
         Lectura de información
       </h1>
 
+      @if (!accesibilidad.modoSimplificado()) {
+
       <p>
         Adapta el contenido según tus necesidades
       </p>
+
+      }
 
     </div>
 
@@ -122,9 +127,13 @@
           Escanear texto
         </strong>
 
+        @if (!accesibilidad.modoSimplificado()) {
+
         <small>
           Tomar una foto
         </small>
+
+        }
 
       </button>
 
@@ -162,9 +171,13 @@
           Escribir texto
         </strong>
 
+        @if (!accesibilidad.modoSimplificado()) {
+
         <small>
           Escribe o pega contenido
         </small>
+
+        }
 
       </button>
 
@@ -203,9 +216,13 @@
           Cargar documento
         </strong>
 
+        @if (!accesibilidad.modoSimplificado()) {
+
         <small>
           PDF, Word o TXT
         </small>
+
+        }
 
       </button>
 

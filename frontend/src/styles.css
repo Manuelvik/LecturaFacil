@@ -377,86 +377,19 @@ textarea:focus-visible {
 }
 
 
-/* =====================================================
-   MODO SIMPLIFICADO
-===================================================== */
+@media (prefers-reduced-motion: reduce) {
 
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
 
-/*
- * Ocultamos únicamente información secundaria
- * conocida.
- *
- * No usamos:
- * .texto span
- *
- * de manera global porque podría esconder
- * información necesaria en otras pantallas.
- */
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
 
-body.modo-simplificado-global
-.pagina-inicio .ayuda {
-  display: none !important;
-}
+    transition-duration: 0.01ms !important;
+  }
 
-
-body.modo-simplificado-global
-.pagina-inicio .marca p {
-  display: none !important;
-}
-
-
-body.modo-simplificado-global
-.pagina-inicio .texto span {
-  display: none !important;
-}
-
-
-/* =========================================
-   HACER CONTROLES MÁS CLAROS
-========================================= */
-
-body.modo-simplificado-global button {
-  min-height: 44px;
-}
-
-
-body.modo-simplificado-global .tarjeta,
-body.modo-simplificado-global .tarjeta-archivo,
-body.modo-simplificado-global .tarjeta-favorito,
-body.modo-simplificado-global .grupo {
-  box-shadow: none !important;
-}
-
-
-/* =========================================
-   MÁS ESPACIO ENTRE ELEMENTOS
-========================================= */
-
-body.modo-simplificado-global
-.opciones-entrada,
-
-body.modo-simplificado-global
-.lista-comandos,
-
-body.modo-simplificado-global
-.lista-archivos,
-
-body.modo-simplificado-global
-.lista-favoritos {
-  gap: 18px !important;
-}
-
-
-/* =========================================
-   TEXTO IMPORTANTE MÁS VISIBLE
-========================================= */
-
-body.modo-simplificado-global
-.tarjeta strong,
-
-body.modo-simplificado-global
-.opcion strong {
-  font-size: 17px;
 }
 
 
@@ -551,4 +484,76 @@ body.alto-contraste-global
   color: #000000 !important;
 
   border-color: #ffff00 !important;
+}
+
+/* =========================================
+   MODO SIMPLE - ARCHIVOS
+========================================= */
+
+body.modo-simplificado-global
+.pagina-archivos .solo-normal {
+  display: none !important;
+}
+
+body.modo-simplificado-global
+.pagina-archivos .tarjeta-archivo {
+  box-shadow: none !important;
+}
+
+body.modo-simplificado-global
+.pagina-archivos .acciones {
+  gap: 12px;
+}
+
+body.modo-simplificado-global
+.pagina-archivos .accion {
+  min-height: 48px;
+}
+/* =========================================
+   MODO SIMPLE - FAVORITOS
+========================================= */
+
+body.modo-simplificado-global
+.pagina-favoritos .solo-normal {
+  display: none !important;
+}
+
+body.modo-simplificado-global
+.pagina-favoritos .tarjeta-favorito {
+  box-shadow: none !important;
+}
+
+body.modo-simplificado-global
+.pagina-favoritos .acciones {
+  gap: 12px;
+}
+
+body.modo-simplificado-global
+.pagina-favoritos .accion {
+  min-height: 48px;
+}
+/* =========================================
+   MODO SIMPLE - PERFIL
+========================================= */
+
+body.modo-simplificado-global
+.pagina-perfil .solo-normal {
+  display: none !important;
+}
+
+body.modo-simplificado-global
+.pagina-perfil .tarjeta {
+  box-shadow: none !important;
+}
+
+body.modo-simplificado-global
+.pagina-perfil .preferencia {
+  min-height: 58px;
+}
+
+body.modo-simplificado-global
+.pagina-perfil .guardar,
+body.modo-simplificado-global
+.pagina-perfil .configurar {
+  min-height: 48px;
 }
