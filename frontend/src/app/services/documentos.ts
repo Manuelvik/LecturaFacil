@@ -17,7 +17,7 @@ export class Documentos {
   private http = inject(HttpClient);
 
   private readonly apiUrl =
-    'http://localhost:8080/api/documentos';
+    'https://lecturafacil-backend.onrender.com/api/documentos';
 
   documentos = signal<DocumentoGuardado[]>([]);
 
