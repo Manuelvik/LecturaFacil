@@ -10,7 +10,7 @@ import java.util.List;
 @RequestMapping("/api/documentos")
 @CrossOrigin(origins = {
         "http://localhost:4200",
-        "https://lectura-facil-phi.vercel.app"
+        "https://lectura-facil-nine.vercel.app"
 })
 public class DocumentoController {
 
