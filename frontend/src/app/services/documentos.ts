@@ -1,4 +1,5 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 export interface DocumentoGuardado {
   id: number;
@@ -13,135 +14,175 @@ export interface DocumentoGuardado {
 })
 export class Documentos {
 
+  private http = inject(HttpClient);
+
+  private readonly apiUrl =
+    'http://localhost:8080/api/documentos';
+
   documentos = signal<DocumentoGuardado[]>([]);
 
   constructor() {
     this.cargarDocumentos();
   }
 
+  private cargarDocumentos(): void {
 
-  // =====================================
-  // GUARDAR DOCUMENTO
-  // =====================================
+    this.http
+      .get<DocumentoGuardado[]>(this.apiUrl)
+      .subscribe({
 
-  guardar(
-    contenido: string
-  ): boolean {
+        next: (documentos) => {
+          this.documentos.set(documentos);
+        },
 
-    const textoLimpio = contenido.trim();
+        error: (error) => {
+          console.error(
+            'Error al cargar documentos:',
+            error
+          );
+        }
 
-    if (!textoLimpio) {
+      });
+  }
+
+  guardar(contenido: string): boolean {
+
+    const texto = contenido.trim();
+
+    if (!texto) {
       return false;
     }
 
-
-    // Utilizamos la primera línea como título
     const primeraLinea =
-      textoLimpio
-        .split('\n')[0]
-        .trim();
+      texto.split('\n')[0].trim();
 
-
-    let titulo =
+    const titulo =
       primeraLinea.length > 40
         ? primeraLinea.substring(0, 40) + '...'
-        : primeraLinea;
+        : primeraLinea || 'Documento sin título';
 
-
-    if (!titulo) {
-      titulo = 'Lectura guardada';
-    }
-
-
-    const nuevoDocumento: DocumentoGuardado = {
-
-      id: Date.now(),
-
+    const nuevoDocumento = {
       titulo: titulo,
-
-      contenido: textoLimpio,
-
+      contenido: texto,
       fecha: new Date().toISOString(),
-
       favorito: false
-
     };
 
+    this.http
+      .post<DocumentoGuardado>(
+        this.apiUrl,
+        nuevoDocumento
+      )
+      .subscribe({
 
-    this.documentos.update(
-      documentos => [
-        nuevoDocumento,
-        ...documentos
-      ]
-    );
+        next: (documentoGuardado) => {
 
+          this.documentos.update(
+            documentos => [
+              ...documentos,
+              documentoGuardado
+            ]
+          );
 
-    this.guardarLocalStorage();
+          console.log(
+            'Documento guardado en MySQL:',
+            documentoGuardado
+          );
+        },
+
+        error: (error) => {
+
+          console.error(
+            'Error al guardar documento:',
+            error
+          );
+
+        }
+
+      });
 
     return true;
-
   }
-
-
-  // =====================================
-  // ELIMINAR
-  // =====================================
 
   eliminar(id: number): void {
 
-    this.documentos.update(
-      documentos =>
-        documentos.filter(
-          documento =>
-            documento.id !== id
-        )
-    );
+    this.http
+      .delete(`${this.apiUrl}/${id}`)
+      .subscribe({
 
+        next: () => {
 
-    this.guardarLocalStorage();
+          this.documentos.update(
+            documentos =>
+              documentos.filter(
+                documento =>
+                  documento.id !== id
+              )
+          );
 
+        },
+
+        error: (error) => {
+
+          console.error(
+            'Error al eliminar documento:',
+            error
+          );
+
+        }
+
+      });
   }
-
-
-  // =====================================
-  // FAVORITO
-  // =====================================
 
   cambiarFavorito(id: number): void {
 
-    this.documentos.update(
-      documentos =>
-        documentos.map(
-          documento => {
+    const documento =
+      this.documentos()
+        .find(d => d.id === id);
 
-            if (documento.id === id) {
+    if (!documento) {
+      return;
+    }
 
-              return {
-                ...documento,
-                favorito:
-                  !documento.favorito
-              };
+    const actualizado: DocumentoGuardado = {
+      ...documento,
+      favorito: !documento.favorito
+    };
 
-            }
+    this.http
+      .put<DocumentoGuardado>(
+        `${this.apiUrl}/${id}`,
+        actualizado
+      )
+      .subscribe({
 
-            return documento;
+        next: (documentoActualizado) => {
 
-          }
-        )
-    );
+          this.documentos.update(
+            documentos =>
+              documentos.map(
+                d =>
+                  d.id === id
+                    ? documentoActualizado
+                    : d
+              )
+          );
 
+        },
 
-    this.guardarLocalStorage();
+        error: (error) => {
 
+          console.error(
+            'Error al actualizar favorito:',
+            error
+          );
+
+        }
+
+      });
   }
 
-
-  // =====================================
-  // OBTENER FAVORITOS
-  // =====================================
-
-  obtenerFavoritos():
-    DocumentoGuardado[] {
+  obtenerFavoritos(): DocumentoGuardado[] {
 
     return this.documentos()
       .filter(
@@ -150,56 +191,4 @@ export class Documentos {
       );
 
   }
-
-
-  // =====================================
-  // LOCAL STORAGE
-  // =====================================
-
-  private guardarLocalStorage(): void {
-
-    localStorage.setItem(
-      'documentosLecturaFacil',
-      JSON.stringify(
-        this.documentos()
-      )
-    );
-
-  }
-
-
-  private cargarDocumentos(): void {
-
-    try {
-
-      const datos =
-        localStorage.getItem(
-          'documentosLecturaFacil'
-        );
-
-
-      if (datos) {
-
-        this.documentos.set(
-          JSON.parse(datos)
-        );
-
-      }
-
-    } catch (error) {
-
-      console.error(
-        'Error al cargar documentos:',
-        error
-      );
-
-
-      localStorage.removeItem(
-        'documentosLecturaFacil'
-      );
-
-    }
-
-  }
-
 }
